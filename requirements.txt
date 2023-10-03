@@ -3,3 +3,4 @@ matplotlib==3.8.0
 pycocotools==2.0.7
 torch==2.0.1
 torchvision==0.15.2
+nltk==3.8.1

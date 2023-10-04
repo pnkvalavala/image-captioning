@@ -1,7 +1,14 @@
 from torch.utils.data import DataLoader
-from coco_dataset import CocoDataset
+from tokenizer import Tokenizer
+from utils import get_batches
 
-def get_loader(transform):
-    dataset = CocoDataset("coco_dataset/train2017", "coco_dataset/annotations/captions_train2017.json", transform)
-    data_loader = DataLoader(dataset)
+def get_loader(transform, batch_size):
+    dataset = Tokenizer(
+        "coco_dataset/train2017",
+        "coco_dataset/annotations/captions_train2017.json",
+        5, #vocab_threshold
+        transform
+    )
+    batches = get_batches(dataset.captions_len, batch_size)
+    data_loader = DataLoader(dataset, batch_sampler=batches)
     return data_loader

@@ -36,7 +36,7 @@ def pipeline(image):
 
     encoder.eval()
     decoder.eval()
-    img = Image.open(io.BytesIO(image.read())).convert('RGB')
+    img = Image.open(io.BytesIO(image)).convert('RGB')
     img = transform_test(img=img)
     img = img.unsqueeze(0)
 

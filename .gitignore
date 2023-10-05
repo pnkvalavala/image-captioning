@@ -2,7 +2,6 @@ coco_dataset/
 imgcap/
 .vscode
 tempCodeRunnerFile.py
-training.ipynb
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
